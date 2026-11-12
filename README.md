@@ -56,12 +56,12 @@ See the [scope document](02-scope-and-criteria/scope-document.md) for justificat
 ```
 SOC-2-Readiness-Assessment/
 ├── README.md
-├── 01-company-profile/
-│   ├── company-overview.md
-│   └── system-description.md
-├── 02-scope-and-criteria/
-│   ├── scope-document.md
-│   └── criteria-mapping.xlsx
+01-company-scope-and-system/
+├── company-overview.md
+├── system-description.md
+└── scope-document.md
+02-criteria-mapping/
+└── criteria-mapping.xlsx
 ├── 03-risk-assessment/
 │   └── risk-register.xlsx
 ├── 04-control-gap-analysis/
