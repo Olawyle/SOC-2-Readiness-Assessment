@@ -43,7 +43,7 @@ See the [scope document](02-scope-and-criteria/scope-document.md) for justificat
 | # | Stage | Deliverables | Status |
 |---|---|---|---|
 | 1 | Company profile, scope and system description | [Company overview](01-company-profile/company-overview.md), [System description](01-company-profile/system-description.md), [Scope document](02-scope-and-criteria/scope-document.md) | Complete |
-| 2 | Criteria and control mapping | Control matrix, criteria-to-control mapping, ownership register | Not started |
+| 2 | Criteria and control mapping | Control matrix, criteria-to-control mapping, ownership register | Complete |
 | 3 | Risk assessment | Risk register, methodology, treatment plan | Not started |
 | 4 | Control assessment and gap analysis | Control assessment, gap register, findings | Not started |
 | 5 | Evidence collection and evaluation | Evidence request register, review log, status tracker | Not started |
