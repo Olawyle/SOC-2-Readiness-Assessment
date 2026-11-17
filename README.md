@@ -46,7 +46,7 @@ See the [scope document](02-scope-and-criteria/scope-document.md) for justificat
 | 2 | Criteria and control mapping | Control matrix, criteria-to-control mapping, ownership register | Complete |
 | 3 | Risk assessment | Risk register, methodology, treatment plan | Complete |
 | 4 | Control assessment and gap analysis | Control assessment, gap register, findings | Complete |
-| 5 | Evidence collection and evaluation | Evidence request register, review log, status tracker | Not started |
+| 5 | Evidence collection and evaluation | Evidence request register, review log, status tracker | Complete |
 | 6 | Remediation management | Remediation register, ownership matrix, closure records | Not started |
 | 7 | GRC implementation and dashboard | eramba workflow, Power BI dashboard | Not started |
 | 8 | Final readiness report | Executive summary, readiness report, remediation roadmap | Not started |
