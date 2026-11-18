@@ -12,14 +12,14 @@ All 47 controls defined in Stage 2 were assessed for design, implementation and 
 
 | Measure | Result |
 |---|---|
-| Controls designed and implemented | 10 of 47 (21%) |
-| Controls partially implemented | 27 of 47 (57%) |
+| Controls designed and implemented | 6 of 47 (13%) |
+| Controls partially implemented | 31 of 47 (66%) |
 | Controls not implemented | 10 of 47 (21%) |
-| Controls ready for a Type 2 observation period | 7 of 47 (15%) |
+| Controls ready for a Type 2 observation period | 4 of 47 (9%) |
 | Controls with evidence retained | 8 of 47 (17%) |
-| Gaps raised | 40 (5 Critical, 20 High, 13 Medium, 2 Low) |
-| Gap types | 19 design, 18 implementation, 3 operating evidence |
-| In-scope criteria with at least one fully implemented control | 9 of 38 (24%) |
+| Gaps raised | 43 (5 Critical, 22 High, 14 Medium, 2 Low) |
+| Gap types | 19 design, 22 implementation, 2 operating evidence |
+| In-scope criteria with at least one fully implemented control | 7 of 38 (18%) |
 
 **Overall conclusion:** CloudBridge has a workable foundation in cloud architecture, encryption, backups, HR screening and customer commitments, but is **not yet ready to begin a SOC 2 Type 2 observation period**. Most gaps are about consistency, documentation and evidence rather than missing technology.
 
@@ -27,9 +27,9 @@ All 47 controls defined in Stage 2 were assessed for design, implementation and 
 
 | Area | Controls | Why it is strong |
 |---|---|---|
-| Availability engineering | AVL-01, AVL-02, AVL-03 | Multi-AZ database, capacity alarms and daily backups are configured and evidenced |
-| Encryption | ACC-06 | TLS 1.2 or higher and KMS encryption at rest, with exportable configuration |
-| People and contracts | HR-01, HR-04, GOV-05 | Screening, confidentiality agreements and customer commitments are documented and retained |
+| Availability engineering | AVL-01, AVL-02 | Multi-AZ database, load balancing and capacity alarms are configured and evidenced (backup monitoring, AVL-03, needs work) |
+| Encryption | ACC-06 (with one exception) | KMS encryption at rest and TLS 1.2 or higher on most endpoints; one legacy endpoint accepted TLS 1.0 and has been fixed |
+| People and contracts | HR-01, GOV-05 | Screening and customer commitments are documented and retained (HR-04 confidentiality agreements had one exception) |
 
 ## 4. Critical findings
 
@@ -43,18 +43,18 @@ All 47 controls defined in Stage 2 were assessed for design, implementation and 
 
 These five areas are among the most common causes of exceptions in SOC 2 reports and map to the highest-rated risks in the Stage 3 register (R01, R02, R04, R05, R07).
 
-## 5. Themes across the 40 gaps
+## 5. Themes across the 43 gaps
 
 1. **Governance is informal.** There is no quarterly management review, policies are stale and unapproved, and no steering group exists (GOV-01, GOV-02, GOV-04).
 2. **Evidence is the biggest Type 2 obstacle.** Only 8 controls retain evidence and 15 have none. Without an evidence library and collection schedule, even working controls cannot be proved over time (GOV-07, MON-01, MON-02).
 3. **Operational security lacks routine.** Scanning, log alerting, triage, incident exercises and post-incident review are missing or untested (OPS-01 to OPS-05).
 4. **Vendor management is absent.** No tiering, due diligence or annual review exists for AWS, GitHub, Google Workspace or Slack (VEN-01 to VEN-03, ACC-07).
 5. **Joiner, mover and leaver controls leak.** Access approvals are informal, leaver removal has no deadline and no access reviews are performed (HR-03, ACC-02, ACC-03).
-6. **Key-person concentration.** The Security Lead owns 14 of the 40 gaps (35%) and 14 of 47 controls, which is a capacity and continuity risk on its own (R20).
+6. **Key-person concentration.** The Security Lead owns 14 of the 43 gaps (33%) and 14 of 47 controls, which is a capacity and continuity risk on its own (R20). The remediation plan moves five of them to other owners.
 
 ## 6. Criteria coverage
 
-Only 9 of the 38 in-scope criteria have at least one fully implemented control, and just 1 criterion is fully covered by every mapped control. This strict measure is expected at the start of a readiness engagement. It will improve quickly as the Critical and High gaps close. The per-criterion view is on the **Criteria Coverage** sheet of the control assessment.
+Only 7 of the 38 in-scope criteria have at least one fully implemented control, and none is yet covered by every mapped control. This strict measure is expected at the start of a readiness engagement. It will improve quickly as the Critical and High gaps close. The per-criterion view is on the **Criteria Coverage** sheet of the control assessment.
 
 ## 7. Recommended sequence
 
@@ -67,13 +67,17 @@ Only 9 of the 38 in-scope criteria have at least one fully implemented control, 
 
 A sensible Type 2 observation start is **April 2027**, once Phases 1 to 3 are complete and a few weeks of retained evidence exist.
 
-## 8. Limitations
+## 8. Update after the Stage 5 evidence review
+
+Reviewing evidence changed four ratings. Implementation was lowered to partial for ACC-05 (a production bastion allowed SSH from anywhere), ACC-06 (one endpoint accepted TLS 1.0), AVL-03 (three failed backups with no alert) and HR-04 (a contractor started without a signed agreement). Gaps G41 to G43 were added and the ACC-05 gap was revised to High. The workbooks and totals in this document reflect version 0.2.
+
+## 9. Limitations
 
 - Assessment ratings are simulated for a fictional company and rely on the assumptions in the company overview.
 - Severity ratings and target dates are assessor proposals and would be agreed with control owners in a real engagement.
-- Stage 5 will test whether evidence supports these ratings and may change them.
+- Stage 5 tested the evidence and led to the four changes described in section 8.
 
-## 9. Next steps
+## 10. Next steps
 
-- Stage 5: define evidence requests for each control and review whether the evidence supports the ratings.
-- Stage 6: convert the 40 gaps into a remediation register with ownership, verification and closure records.
+- Stage 5 (done): evidence requests and reviews are in `05-evidence-management/`.
+- Stage 6 (done): the 43 gaps are converted into a remediation register with ownership, verification and closure records in `06-remediation/`.
